@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Shortcuts exist from Android 7.1 (API 25); on 7.0 they are simply not shown. -->
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutId="change_server"
+        android:shortcutShortLabel="@string/shortcut_change_server"
+        tools:ignore="UnusedAttribute">
+        <intent
+            android:action="de.jbpcapital.portfolioviewer.CHANGE_SERVER"
+            android:targetClass="de.jbpcapital.portfolioviewer.MainActivity"
+            android:targetPackage="de.jbpcapital.portfolioviewer" />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* JBP Capital "Architectural Monolith": obsidian layers, gold accent, hard corners. */
+:root {
+  --bg: #131313;
+  --surface-low: #1b1b1b;
+  --surface: #1f1f1f;
+  --surface-high: #2a2a2a;
+  --surface-highest: #353535;
+  --text: #e2e2e2;
+  --muted: #9d968a;
+  --gold: #e9c349;
+  --gold-deep: #af8d11;
+  --on-gold: #241a00;
+  --gain: #e9c349;
+  --loss: #ef7a6d;
+  /* Chart series in fixed order (portfolio, then benchmarks), validated for the dark surface. */
+  --series-1: #b08a17;
+  --series-2: #3987e5;
+  --series-3: #199e70;
+  --series-4: #9085e9;
+  --series-5: #d55181;
+  --grid: #2a2a2a;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3f0e8;
+    --surface-low: #ebe7dd;
+    --surface: #e5e0d4;
+    --surface-high: #ddd7c9;
+    --surface-highest: #d3ccbc;
+    --text: #151515;
+    --muted: #625c50;
+    --gold: #8f6f0c;
+    --gold-deep: #6f5405;
+    --on-gold: #fffaf0;
+    --gain: #7a5d06;
+    --loss: #b3261e;
+    --series-1: #8f6f0c;
+    --series-2: #2a78d6;
+    --series-3: #1baf7a;
+    --series-4: #4a3aa7;
+    --series-5: #e87ba4;
+    --grid: #ddd7c9;
+    color-scheme: light;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface-low: var(--surface-low);
+  --color-surface: var(--surface);
+  --color-surface-high: var(--surface-high);
+  --color-surface-highest: var(--surface-highest);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-on-gold: var(--on-gold);
+  --color-gain: var(--gain);
+  --color-loss: var(--loss);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-manrope), var(--font-inter), ui-sans-serif, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* TV mode: the active scene's progress bar fills over the scene's time. */
+@keyframes tv-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.tv-progress {
+  animation-name: tv-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

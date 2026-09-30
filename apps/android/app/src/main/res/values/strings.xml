@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Portfolio Viewer</string>
+    <string name="server_title">Connect to your Portfolio Viewer</string>
+    <string name="server_intro">Clients of JBP Capital use the address below. If you run Portfolio Viewer yourself, enter the address of your server.</string>
+    <string name="server_label">Server address</string>
+    <string name="server_connect">Connect</string>
+    <string name="server_checking">Checking the server…</string>
+    <string name="server_invalid">Enter an address such as https://portfolio.example.com.</string>
+    <string name="server_not_found">No Portfolio Viewer answers at this address.</string>
+    <string name="server_unreachable">The server cannot be reached: %1$s</string>
+    <string name="offline_title">The server cannot be reached.</string>
+    <plurals name="offline_retry">
+        <item quantity="one">Next attempt in %1$d second.</item>
+        <item quantity="other">Next attempt in %1$d seconds.</item>
+    </plurals>
+    <string name="offline_try_now">Try now</string>
+    <string name="offline_change_server">Change server</string>
+    <string name="shortcut_change_server">Change server</string>
+    <string name="download_started">Downloading %1$s</string>
+    <string name="file_picker_missing">No app to choose a file is installed.</string>
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- JBP Capital "Architectural Monolith": obsidian, gold, muted text -->
+    <color name="background">#131313</color>
+    <color name="text">#e2e2e2</color>
+    <color name="muted">#9d968a</color>
+    <color name="gold">#e9c349</color>
+    <color name="loss">#ef7a6d</color>
+</resources>

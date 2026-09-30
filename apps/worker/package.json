@@ -1,0 +1,19 @@
+{
+  "name": "@pv/worker",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@pv/core": "*",
+    "@pv/db": "*",
+    "@pv/market-data": "*",
+    "croner": "^10.0.1",
+    "drizzle-orm": "^0.45.3"
+  }
+}

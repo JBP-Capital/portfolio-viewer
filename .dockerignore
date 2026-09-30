@@ -1,0 +1,12 @@
+**/node_modules
+**/.next
+**/.env
+**/.env.*
+.git
+.awg
+.superpowers
+docs
+deploy
+apps/android
+**/test-results
+**/playwright-report
