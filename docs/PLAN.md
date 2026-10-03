@@ -15,5 +15,5 @@ Each sub-project has its own implementation plan in `docs/superpowers/plans/`.
 - [ ] 5b. Android — Play Console internal testing, then production (Jim's account; real use needs the hosted instance)
 - [ ] 6. Hosted — portfolio.jbpcapital.de, jbpcapital.de auth, invites, paid provider (blocked: provider decision)
 - [x] 7a. Open-source release prepared — source link (AGPL §13), release workflow with GHCR images, README, self-hosting guide, CONTRIBUTING, SECURITY
-- [ ] 7b. Open-source release published — tag v0.1.0 released, images public and pull-tested; open: make the repository public, then enable private vulnerability reporting (see docs/STATUS.md)
+- [x] 7b. Open-source release published — repository public, v0.1.0 released, images public and tested as a stranger, private vulnerability reporting on
 - [ ] 8. Later — family migration (decision pending)

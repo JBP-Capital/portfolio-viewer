@@ -43,7 +43,7 @@ Branch `feat/open-source-release`, plan `docs/superpowers/plans/2026-10-02-open-
   release images of web and worker are pushed by separate jobs, so a failed worker build after a
   successful web build leaves `latest` on mixed versions until the next tag.
 
-### Making it public — state of 2026-10-03
+### Published — 2026-10-03
 The repository starts from a single commit and the first release tag `v0.1.0` sits on it.
 - Done: the release run is green; both images are pushed (`0.1.0`, `0.1`, `latest`; amd64 and arm64) and the
   GitHub release `v0.1.0` exists.
@@ -52,11 +52,11 @@ The repository starts from a single commit and the first release tag `v0.1.0` si
   Public. New packages are private by default, even in a public repository.
 - Done: anonymous pull test (`docker logout ghcr.io`, then `docker pull
   ghcr.io/jbp-capital/portfolio-viewer-web:0.1.0` and the worker image) downloads without a login.
-- Open, needs the owner's go-ahead: **make the repository public** (Settings → General → Danger zone →
-  Change repository visibility → Public). Before: only `main` should exist as a branch.
-- Open, right after that: **private vulnerability reporting** (Settings → Advanced Security → Private
-  vulnerability reporting → Enable). GitHub offers it only for public repositories. Without it the "Report a
-  vulnerability" link in SECURITY.md does not work.
+- Done (2026-10-03): the repository is public (only `main` and the tag `v0.1.0` existed, no pull requests).
+  Private vulnerability reporting is enabled (GitHub offers it only for public repositories).
+- Verified as a stranger, without a login: the repository, licence, release and security policy open; a fresh
+  clone has exactly the commits and the tag; `docker compose up` from that clone with the published `latest`
+  images (demo prices) starts all four containers healthy, the login page shows the source link and 0.1.0.
 - If a later release run fails, fix the cause and push the tag again (`git push --delete origin vX.Y.Z`, then
   tag and push again). A release drafted by hand on GitHub is fine, the workflow copes with it.
 
