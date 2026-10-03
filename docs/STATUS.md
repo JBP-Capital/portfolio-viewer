@@ -43,24 +43,22 @@ Branch `feat/open-source-release`, plan `docs/superpowers/plans/2026-10-02-open-
   release images of web and worker are pushed by separate jobs, so a failed worker build after a
   successful web build leaves `latest` on mixed versions until the next tag.
 
-### Open — the owner's part (making it public)
-The history was squashed into a single starting commit on 2026-09-30 (the earlier history is kept privately
-by the maintainer), and the first release tag `v0.1.0` is pushed right after that commit; it starts the
-release workflow. Nothing below can be done by the code alone; the order matters.
-1. **Turn on private vulnerability reporting:** GitHub → repository `JBP-Capital/portfolio-viewer` →
-   Settings → Advanced Security (Code security) → Private vulnerability reporting → Enable. Without it the
-   "Report a vulnerability" button in SECURITY.md does not exist.
-2. **Check the release:** Actions tab → the run "release" must end green (10–20 minutes); it builds and
-   pushes both images and creates the GitHub release with generated notes. Should it fail, fix the cause
-   and push the tag again (`git push --delete origin v0.1.0`, then tag and push again). A tag made by hand
-   works too: `git tag v0.1.0 && git push origin v0.1.0` from a checkout of `main`; a release drafted by hand
-   on GitHub is fine, the workflow copes with it.
-3. **Make both images public:** GitHub → organisation JBP-Capital → Packages → `portfolio-viewer-web` →
-   Package settings → Change visibility → Public; the same for `portfolio-viewer-worker`. New packages are
-   private, even when the repository is public.
-4. **Test as a stranger:** run `docker logout ghcr.io`, then
-   `docker pull ghcr.io/jbp-capital/portfolio-viewer-web:0.1.0`. It must download without a login.
-5. **Make the repository public:** Settings → General → Danger zone → Change repository visibility → Public.
+### Making it public — state of 2026-10-03
+The repository starts from a single commit and the first release tag `v0.1.0` sits on it.
+- Done: the release run is green; both images are pushed (`0.1.0`, `0.1`, `latest`; amd64 and arm64) and the
+  GitHub release `v0.1.0` exists.
+- Done: both images are public. The organisation first had to allow public packages (organisation
+  Settings → Packages → Package creation → Public); then each package: Package settings → Change visibility →
+  Public. New packages are private by default, even in a public repository.
+- Done: anonymous pull test (`docker logout ghcr.io`, then `docker pull
+  ghcr.io/jbp-capital/portfolio-viewer-web:0.1.0` and the worker image) downloads without a login.
+- Open, needs the owner's go-ahead: **make the repository public** (Settings → General → Danger zone →
+  Change repository visibility → Public). Before: only `main` should exist as a branch.
+- Open, right after that: **private vulnerability reporting** (Settings → Advanced Security → Private
+  vulnerability reporting → Enable). GitHub offers it only for public repositories. Without it the "Report a
+  vulnerability" link in SECURITY.md does not work.
+- If a later release run fails, fix the cause and push the tag again (`git push --delete origin vX.Y.Z`, then
+  tag and push again). A release drafted by hand on GitHub is fine, the workflow copes with it.
 
 ## 2026-09-29 — sub-project 4c done (hypothetical chart, moves between portfolios, TV detail)
 
