@@ -510,6 +510,7 @@ Branch `feat/input`, plan `docs/superpowers/plans/2026-09-27-input.md`.
 - Android app id `de.jbpcapital.portfolioviewer` (cannot change after the first Play release).
 
 ### Open — needs the owner
-- **Market data provider for the hosted instance:** a paid provider whose licence allows showing prices to
-  the logged-in clients; decision pending.
+- **Market data for the hosted instance:** no paid provider (owner's decision, 2026-10-03; this replaces the
+  earlier plan for a licensed paid provider). Open: how prices reach the hosted clients with a clean licence,
+  for example each client entering an own key of a free provider; to be decided.
 - Family migration from the family's spreadsheet: decided later.
